@@ -29,6 +29,7 @@ public class MemoryBenchmark {
             final var nonHashMapMemoryUsage = runtime.totalMemory() - runtime.freeMemory();
             var longLongMap = new LongLongHashMap();
             testMemoryConsumption(longLongMap::put, longLongMapWriter, nonHashMapMemoryUsage);
+            longLongMap = null; // help gc
         }
 
         for (var mapConstructor : mapsForComparison) {
@@ -37,6 +38,7 @@ public class MemoryBenchmark {
                 final long nonHashMapMemoryUsage = runtime.totalMemory() - runtime.freeMemory();
                 var map = mapConstructor.get();
                 testMemoryConsumption(map::put, writer, nonHashMapMemoryUsage);
+                map = null;
             }
         }
     }
