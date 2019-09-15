@@ -6,14 +6,15 @@ import java.util.NoSuchElementException;
 import java.util.function.Function;
 
 /**
- * This class is a memory efficient LongLongMap interface implementation.
- * The implementation is based on an open addressing hash map with linear probing.
+ * This class is a memory efficient LongLongMap interface implementation
+ * which is based on an open addressing hash map with linear probing.
  * Thus, each method which belongs to a public interface of the map has amortized O(1)
  * complexity. Low memory consumption is achieved by serializing key-value pair directly into
- * storage byte array in which every other entry is stored. In order to achieve
+ * storage byte array in which every other entry is stored. Note that in order to achieve
  * this implementation's main goal (namely being memory efficient) this hash map will shrink
  * its allocated space when number of contained elements reaches minimal load factor
  * (which is unusual to the most of the java.util hash maps).
+ *
  * Note that this implementation is not synchronized.
  */
 public class LongLongHashMap implements LongLongMap {

@@ -14,7 +14,7 @@ def read_memory_consuption(file_name):
         ys[-1].append(float(y))
 
 
-for name in ["LongLongMapOverhead", "HashMapOverhead", "HashtableOverhead", "TreeMapOverhead"]:
+for name in ["LongLongHashMapMemory", "HashMapMemory", "HashtableMemory", "TreeMapMemory"]:
     read_memory_consuption(name)
 
 
@@ -23,5 +23,6 @@ plt.plot(xs[1], ys[1], label="HashMap")
 plt.plot(xs[2], ys[2], label="Hashtable")
 plt.plot(xs[3], ys[3], label="TreeMap")
 plt.legend()
+plt.yticks(range(8))
 plt.show()
 
