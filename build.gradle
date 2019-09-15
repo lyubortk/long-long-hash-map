@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.hse.lyubortk.longlongmap'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 12
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.jetbrains', name: 'annotations', version: '17.0.0'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.2'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.2'
+}
+
+test {
+    useJUnitPlatform()
+}
