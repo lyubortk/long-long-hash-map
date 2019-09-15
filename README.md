@@ -13,3 +13,12 @@ A second optimization used to achieve this implementation's main goal (namely be
 is that this hash map shrinks
 its allocated space when number of contained elements reaches minimal load factor
 (which is unusual to the most of the java.util hash maps).
+
+
+### Memory efficiency comparison
+
+Here is a memory efficiency comparison between LongLongHashMap and some of the java.util map implementations.
+Axis X represents the number of elements iserted into the map. Axis Y represent the ratio of used space to
+data size which is 2\*8 bytes in this case (the lower the better). The code could be found in the test derictory.
+
+![](/memory_consumption/memory_consumption_benchmark.png?raw=true "Memory consumption benchmark")
